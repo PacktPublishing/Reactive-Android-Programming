@@ -1,0 +1,76 @@
+plugins {
+    id "me.tatarka.retrolambda" version "3.4.0"
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "packt.reactivestocks"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.1.0'
+
+    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.0.3'
+    compile group: 'io.reactivex.rxjava2', name: 'rxandroid', version: '2.0.1'
+
+    compile group: 'io.reactivex', name: 'rxjava', version: '1.2.5'
+
+
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    compile 'com.jakewharton.rxbinding:rxbinding:1.0.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:1.0.0'
+
+    compile 'com.pushtorefresh.storio:sqlite:1.12.1'
+
+    compile 'com.pushtorefresh.storio:content-resolver-annotations:1.12.1'
+    annotationProcessor 'com.pushtorefresh.storio:sqlite-annotations-processor:1.12.1'
+
+    compile 'com.android.support:cardview-v7:25.1.0'
+    compile 'com.android.support:recyclerview-v7:25.1.0'
+
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+
+    compile 'org.twitter4j:twitter4j-core:4.0.6'
+    compile 'org.twitter4j:twitter4j-stream:4.0.6'
+
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-android:2.0.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+
+    compile 'org.javatuples:javatuples:1.2'
+
+    compile 'com.f2prateek.rx.preferences2:rx-preferences:2.0.0-RC1'
+
+
+    compile "com.github.akarnokd:rxjava2-interop:0.8.1"
+}
